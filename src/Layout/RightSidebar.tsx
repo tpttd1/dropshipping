@@ -33,10 +33,8 @@ const RightSidebar = ({ handleToggleDrawer, isOpen }: any) => {
       layoutSemiDarkType: layout.layoutSemiDarkType,
       layoutSkintype: layout.layoutSkintype,
       layoutModeType: layout.layoutModeType,
-      layoutDirectionType: layout.layoutDirectionType,
       layoutContentWidthType: layout.layoutContentWidthType,
       layoutSidebarSizeType: layout.layoutSidebarSizeType,
-      layoutNavigationType: layout.layoutNavigationType,
       layoutSidebarColorType: layout.layoutSidebarColorType,
       layoutTopbarColorType: layout.layoutTopbarColorType,
     })
@@ -47,10 +45,8 @@ const RightSidebar = ({ handleToggleDrawer, isOpen }: any) => {
     // layoutSemiDarkType,
     layoutSkintype,
     layoutModeType,
-    layoutDirectionType,
     layoutContentWidthType,
     layoutSidebarSizeType,
-    layoutNavigationType,
     layoutSidebarColorType,
     layoutTopbarColorType,
   } = useSelector(selectLayoutProperties);
