@@ -1,14 +1,14 @@
-import React from 'react';
-import { Facebook, Github, Mail, Smartphone, Twitter } from 'lucide-react';
-import Tab from 'Common/Components/Tab/Tab';
 import { Nav } from 'Common/Components/Tab/Nav';
-import ModernImage from '../ModernImage';
-import Modern from '../Modern';
-import AuthDropdown from '../AuthDropdown';
+import Tab from 'Common/Components/Tab/Tab';
+import { Facebook, Github, Mail, Smartphone, Twitter } from 'lucide-react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import AuthDropdown from '../AuthDropdown';
+import Modern from '../Modern';
+import ModernImage from '../ModernImage';
 
 const LoginModern = () => {
-  document.title = 'Sign In | Tailwick - React Admin & Dashboard Template';
+  document.title = 'Sign In | Dashboard Template';
 
   React.useEffect(() => {
     const bodyElement = document.body;

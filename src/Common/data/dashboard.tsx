@@ -8,6 +8,7 @@ import { ReactElement } from 'react';
 
 // Images
 import avatar1 from 'assets/images/users/avatar-1.png';
+import avatar10 from 'assets/images/users/avatar-10.png';
 import avatar2 from 'assets/images/users/avatar-2.png';
 import avatar3 from 'assets/images/users/avatar-3.png';
 import avatar4 from 'assets/images/users/avatar-4.png';
@@ -16,16 +17,73 @@ import avatar6 from 'assets/images/users/avatar-6.png';
 import avatar7 from 'assets/images/users/avatar-7.png';
 import avatar8 from 'assets/images/users/avatar-8.png';
 import avatar9 from 'assets/images/users/avatar-9.png';
-import avatar10 from 'assets/images/users/avatar-10.png';
 
 import User1 from 'assets/images/users/user-1.jpg';
 import User2 from 'assets/images/users/user-2.jpg';
 import User3 from 'assets/images/users/user-3.jpg';
 
-import appStore from 'assets/images/brand/app-store.png';
-import telegram from 'assets/images/brand/telegram.png';
 import android from 'assets/images/brand/android.png';
+import appStore from 'assets/images/brand/app-store.png';
 import slack from 'assets/images/brand/slack.png';
+import telegram from 'assets/images/brand/telegram.png';
+
+// 55468	03/03/2025 - 22:48:34	2,994,491	2,413,278	2,994,491	
+// Đã thanh toán => Paid
+// Đã cọc => Deposited
+// Shop phát hàng => Shipped
+// Hoàn thành => Done
+
+
+const PurchaseRequestData = [
+  {
+    id: '55468',
+    orderDate: '03/03/2025 - 22:48:34',
+    price: 2994491,
+    depositAmount: 2413278,
+    depositedAmount: 2994491,
+    status: 'Paid',
+  },
+  {
+    id: '55455',
+    orderDate: '03/03/2025 - 22:48:34',
+    price: 299491,
+    depositAmount: 241378,
+    depositedAmount: 299491,
+    status: 'Deposited',
+  },
+  {
+    id: '55449',
+    orderDate: '03/03/2025 - 22:48:34',
+    price: 299491,
+    depositAmount: 243278,
+    depositedAmount: 299491,
+    status: 'Done',
+  },
+  {
+    id: '55424',
+    orderDate: '03/03/2025 - 22:48:34',
+    price: 299491,
+    depositAmount: 241378,
+    depositedAmount: 299441,
+    status: 'Shipped',
+  },
+  {
+    id: '55392',
+    orderDate: '03/03/2025 - 22:48:34',
+    price: 299441,
+    depositAmount: 241378,
+    depositedAmount: 299491,
+    status: 'Deposited',
+  },
+  {
+    id: '55391',
+    orderDate: '03/03/2025 - 22:48:34',
+    price: 294491,
+    depositAmount: 243278,
+    depositedAmount: 294491,
+    status: 'Paid',
+  },
+];
 
 const ProductsStatisticsData = [
   {
@@ -887,18 +945,9 @@ const EmailPerformanceData = [
 ];
 
 export {
-  ProductsStatisticsData,
-  ProductOrdersData,
-  widgetsData,
-  widgetsData2,
-  EmployeePerformanceData,
-  RecentPayrollData,
-  UpcomingInterviewData,
-  UpcomingScheduledData,
-  activeFriendsData,
-  storyData,
-  MessageData,
-  PopularEventsData,
-  UpcomingBirthdayData,
-  EmailPerformanceData,
+  activeFriendsData, EmailPerformanceData, EmployeePerformanceData, MessageData,
+  PopularEventsData, ProductOrdersData, ProductsStatisticsData, PurchaseRequestData, RecentPayrollData, storyData, UpcomingBirthdayData, UpcomingInterviewData,
+  UpcomingScheduledData, widgetsData,
+  widgetsData2
 };
+

@@ -1,22 +1,22 @@
-import React from 'react';
 import { Facebook, Github, Mail, Twitter } from 'lucide-react';
+import React from 'react';
 
 // Image
-import logoLight from 'assets/images/logo-light.png';
-import logoDark from 'assets/images/logo-dark.png';
 import img1 from 'assets/images/auth/img-01.png';
-import us from 'assets/images/flags/us.svg';
-import es from 'assets/images/flags/es.svg';
-import de from 'assets/images/flags/de.svg';
-import fr from 'assets/images/flags/fr.svg';
-import jp from 'assets/images/flags/jp.svg';
-import it from 'assets/images/flags/it.svg';
-import ru from 'assets/images/flags/ru.svg';
 import ae from 'assets/images/flags/ae.svg';
+import de from 'assets/images/flags/de.svg';
+import es from 'assets/images/flags/es.svg';
+import fr from 'assets/images/flags/fr.svg';
+import it from 'assets/images/flags/it.svg';
+import jp from 'assets/images/flags/jp.svg';
+import ru from 'assets/images/flags/ru.svg';
+import us from 'assets/images/flags/us.svg';
+import logoDark from 'assets/images/logo-dark.png';
+import logoLight from 'assets/images/logo-light.png';
 import { Link } from 'react-router-dom';
 
 const LoginBoxed = () => {
-  document.title = 'Sign In | Tailwick - React Admin & Dashboard Template';
+  document.title = 'Sign In | Dashboard Template';
 
   return (
     <React.Fragment>
@@ -30,7 +30,7 @@ const LoginBoxed = () => {
                     Welcome Back !
                   </h4>
                   <p className="text-slate-500 dark:text-zink-200">
-                    Sign in to continue to Tailwick.
+                    Sign in to continue.
                   </p>
                 </div>
 

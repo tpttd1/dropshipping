@@ -1,22 +1,22 @@
-import React from 'react';
-import AuthIcon from 'pages/AuthenticationInner/AuthIcon';
-import { useDispatch, useSelector } from 'react-redux';
-import { registerUser, resetRegisterFlag } from 'slices/thunk';
-import { createSelector } from 'reselect';
 import { Facebook, Github, Mail, Twitter } from 'lucide-react';
+import AuthIcon from 'pages/AuthenticationInner/AuthIcon';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { createSelector } from 'reselect';
+import { registerUser, resetRegisterFlag } from 'slices/thunk';
 
 // Formik validation
-import * as Yup from 'yup';
 import { useFormik as useFormic } from 'formik';
+import * as Yup from 'yup';
 
 // Image
-import logoLight from 'assets/images/logo-light.png';
 import logoDark from 'assets/images/logo-dark.png';
+import logoLight from 'assets/images/logo-light.png';
 import { RootState } from 'slices';
 
 const Register = () => {
-  document.title = 'Register | Tailwick - React Admin & Dashboard Template';
+  document.title = 'Register | Dashboard Template';
 
   const dispatch = useDispatch<any>();
   const navigation = useNavigate(); // Use the useNavigate hook

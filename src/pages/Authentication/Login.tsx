@@ -1,22 +1,22 @@
-import React from 'react';
 import { Facebook, Github, Mail, Twitter } from 'lucide-react';
+import React from 'react';
 
 // Formik validation
-import * as Yup from 'yup';
 import { useFormik as useFormic } from 'formik';
+import * as Yup from 'yup';
 
 // Image
-import logoLight from 'assets/images/logo-light.png';
 import logoDark from 'assets/images/logo-dark.png';
-import { loginUser, socialLogin } from 'slices/thunk';
-import { useDispatch, useSelector } from 'react-redux';
+import logoLight from 'assets/images/logo-light.png';
 import withRouter from 'Common/withRouter';
-import { createSelector } from 'reselect';
 import AuthIcon from 'pages/AuthenticationInner/AuthIcon';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { createSelector } from 'reselect';
+import { loginUser, socialLogin } from 'slices/thunk';
 
 const Login = (props: any) => {
-  document.title = 'Login | Tailwick - React Admin & Dashboard Template';
+  document.title = 'Login | Dashboard Template';
 
   const dispatch = useDispatch<any>();
 
@@ -114,7 +114,7 @@ const Login = (props: any) => {
                 Welcome Back !
               </h4>
               <p className="text-slate-500 dark:text-zink-200">
-                Sign in to continue to Tailwick.
+                Sign in to continue.
               </p>
             </div>
 

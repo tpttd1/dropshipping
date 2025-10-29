@@ -1,14 +1,14 @@
-import React from 'react';
 import { Facebook, Github, Mail, Twitter } from 'lucide-react';
+import React from 'react';
 import AuthIcon from '../AuthIcon';
 
 // Image
-import logoLight from 'assets/images/logo-light.png';
 import logoDark from 'assets/images/logo-dark.png';
+import logoLight from 'assets/images/logo-light.png';
 import { Link } from 'react-router-dom';
 
 const Basic = () => {
-  document.title = 'Sign In | Tailwick - React Admin & Dashboard Template';
+  document.title = 'Sign In | Dashboard Template';
 
   React.useEffect(() => {
     const bodyElement = document.body;
@@ -67,7 +67,7 @@ const Basic = () => {
                 Welcome Back !
               </h4>
               <p className="text-slate-500 dark:text-zink-200">
-                Sign in to continue to Tailwick.
+                Sign in to continue.
               </p>
             </div>
 

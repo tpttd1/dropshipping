@@ -1,25 +1,25 @@
-import React from 'react';
+import { Dropdown } from 'Common/Components/Dropdown';
 import { Nav } from 'Common/Components/Tab/Nav';
 import Tab from 'Common/Components/Tab/Tab';
-import { Link } from 'react-router-dom';
 import { Facebook, Github, Mail, Smartphone, Twitter } from 'lucide-react';
-import { Dropdown } from 'Common/Components/Dropdown';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Image
-import logoLight from 'assets/images/logo-light.png';
-import logoDark from 'assets/images/logo-dark.png';
 import image1 from 'assets/images/auth/img-01.png';
-import us from 'assets/images/flags/us.svg';
-import es from 'assets/images/flags/es.svg';
-import de from 'assets/images/flags/de.svg';
-import fr from 'assets/images/flags/fr.svg';
-import jp from 'assets/images/flags/jp.svg';
-import it from 'assets/images/flags/it.svg';
-import ru from 'assets/images/flags/ru.svg';
 import ae from 'assets/images/flags/ae.svg';
+import de from 'assets/images/flags/de.svg';
+import es from 'assets/images/flags/es.svg';
+import fr from 'assets/images/flags/fr.svg';
+import it from 'assets/images/flags/it.svg';
+import jp from 'assets/images/flags/jp.svg';
+import ru from 'assets/images/flags/ru.svg';
+import us from 'assets/images/flags/us.svg';
+import logoDark from 'assets/images/logo-dark.png';
+import logoLight from 'assets/images/logo-light.png';
 
 const RegisterBoxed = () => {
-  document.title = 'Sign In | Tailwick - React Admin & Dashboard Template';
+  document.title = 'Sign In | Dashboard Template';
 
   return (
     <React.Fragment>

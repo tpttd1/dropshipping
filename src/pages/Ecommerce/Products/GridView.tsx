@@ -10,14 +10,12 @@ import {
   Eye,
   FileEdit,
   Heart,
-  LayoutGrid,
-  List,
   MoreHorizontal,
   Search,
   ShoppingCart,
   Star,
   Trash2,
-  X,
+  X
 } from 'lucide-react';
 
 import { Dropdown } from 'Common/Components/Dropdown';
@@ -50,7 +48,6 @@ const GridView = () => {
 
   const [data, setData] = useState<any>([]);
   const [eventData, setEventData] = useState<any>();
-  const [list, setList] = useState<boolean>(true);
 
   // Get Data
   useEffect(() => {
@@ -696,10 +693,10 @@ const GridView = () => {
                   </li>
                 </Dropdown.Content>
               </Dropdown>
-              <button
+              {/* <button
                 type="button"
                 id="listView"
-                className={`flex items-center justify-center size-[37.5px] p-0 text-sky-500 btn bg-sky-100 hover:text-white hover:bg-sky-600 focus:text-white focus:bg-sky-600 [&.active]:text-white [&.active]:bg-sky-600 dark:bg-sky-500/20 dark:text-sky-400 dark:hover:bg-sky-500 dark:hover:text-white dark:focus:bg-sky-500 dark:focus:text-white dark:[&.active]:bg-sky-500 dark:[&.active]:text-white dark:ring-sky-400/20 ${!list && 'active'}`}
+                className={`flex items-center justify-center size-[37.5px] p-0 text-sky-500 btn bg-sky-100 hover:text-white hover:bg-sky-600 focus:text-white focus:bg-sky-600 [&.active]:text-white [&.active]:bg-sky-600 dark:bg-sky-500/20 dark:text-sky-400 dark:hover:bg-sky-500 dark:hover:text-white dark:focus:bg-sky-500 dark:focus:text-white dark:[&.active]:bg-sky-500 dark:[&.active]:text-white dark:ring-sky-400/20`}
                 onClick={() => setList(false)}
               >
                 <List className="size-4" />
@@ -707,11 +704,11 @@ const GridView = () => {
               <button
                 type="button"
                 id="gridView"
-                className={`flex items-center justify-center size-[37.5px] p-0 text-sky-500 btn bg-sky-100 hover:text-white hover:bg-sky-600 focus:text-white focus:bg-sky-600 [&.active]:text-white [&.active]:bg-sky-600 dark:bg-sky-500/20 dark:text-sky-400 dark:hover:bg-sky-500 dark:hover:text-white dark:focus:bg-sky-500 dark:focus:text-white dark:[&.active]:bg-sky-500 dark:[&.active]:text-white dark:ring-sky-400/20 ${list && 'active'}`}
+                className={`flex items-center justify-center size-[37.5px] p-0 text-sky-500 btn bg-sky-100 hover:text-white hover:bg-sky-600 focus:text-white focus:bg-sky-600 [&.active]:text-white [&.active]:bg-sky-600 dark:bg-sky-500/20 dark:text-sky-400 dark:hover:bg-sky-500 dark:hover:text-white dark:focus:bg-sky-500 dark:focus:text-white dark:[&.active]:bg-sky-500 dark:[&.active]:text-white dark:ring-sky-400/20 active`}
                 onClick={() => setList(true)}
               >
                 <LayoutGrid className="size-4" />
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -743,7 +740,7 @@ const GridView = () => {
           </div>
 
           <div
-            className={`grid grid-cols-1 mt-5 md:grid-cols-2 [&.gridView]:grid-cols-1 xl:grid-cols-4 group [&.gridView]:xl:grid-cols-1 gap-x-5 ${!list && 'gridView'}`}
+            className={`grid grid-cols-2 mt-5 md:grid-cols-3 xl:grid-cols-4 group gap-x-5`}
             id="cardGridView"
           >
             {(data || []).map((item: any, key: number) => (

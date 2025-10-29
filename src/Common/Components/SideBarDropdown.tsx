@@ -1,11 +1,11 @@
 import React, {
   createContext,
-  useContext,
-  ReactNode,
   ElementType,
-  useRef,
-  useEffect,
+  ReactNode,
   useCallback,
+  useContext,
+  useEffect,
+  useRef,
 } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 interface DropdownContextType {
@@ -171,6 +171,25 @@ const Dropdown = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
     initActiveMenu();
   }, [initActiveMenu]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const dropdownElements = document.querySelectorAll('.dropdown');
+      dropdownElements.forEach((dropdown) => {
+        if (!dropdown.contains(event.target as Node)) {
+          const activeItems = dropdown.querySelectorAll('.active');
+          removeActivation(activeItems);
+        }
+      });
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+
   return (
     <DropDownContext.Provider value={{ toggleOpen }}>
       <Component
@@ -234,3 +253,4 @@ const Content: React.FC<ContentProps> = ({
 Dropdown.Trigger = Trigger;
 Dropdown.Content = Content;
 export { Dropdown };
+

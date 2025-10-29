@@ -1,14 +1,14 @@
-import React from 'react';
 import { LogOut } from 'lucide-react';
+import React from 'react';
 import AuthIcon from '../AuthIcon';
 
 // Image
-import logoLight from 'assets/images/logo-light.png';
 import logoDark from 'assets/images/logo-dark.png';
+import logoLight from 'assets/images/logo-light.png';
 import { Link } from 'react-router-dom';
 
 const BasicLogout = () => {
-  document.title = 'LogOut | Tailwick - React Admin & Dashboard Template';
+  document.title = 'LogOut | Dashboard Template';
 
   React.useEffect(() => {
     const bodyElement = document.body;

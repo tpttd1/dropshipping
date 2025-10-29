@@ -1,27 +1,28 @@
 import {
-  ProductsStatisticsData,
-  ProductOrdersData,
-  widgetsData,
-  widgetsData2,
+  EmailPerformanceData,
   EmployeePerformanceData,
+  MessageData,
+  PopularEventsData,
+  ProductOrdersData,
+  ProductsStatisticsData,
+  PurchaseRequestData,
   RecentPayrollData,
+  UpcomingBirthdayData,
   UpcomingInterviewData,
   UpcomingScheduledData,
   activeFriendsData,
   storyData,
-  MessageData,
-  PopularEventsData,
-  UpcomingBirthdayData,
-  EmailPerformanceData,
+  widgetsData,
+  widgetsData2,
 } from './dashboard';
 
 // Chat
 import {
+  ChatUser,
   ContactList,
+  Documents,
   RecentChats,
   RecentFind,
-  Documents,
-  ChatUser,
 } from './chat';
 
 // Email
@@ -34,24 +35,24 @@ import { CalenderCategories, Events } from './calendar';
 import {
   ListViewData,
   OrderListData,
-  SellersData,
   ProductGridViewData,
-  ShoppingCartData,
   ProductReviewsData,
+  SellersData,
+  ShoppingCartData,
 } from './ecommerce';
 
 // HR Management
 import {
+  AttendanceData,
   DepartmentsListData,
   EmployeeListData,
-  HolidaysData,
-  AttendanceData,
-  MainAttendanceData,
-  LeaveManageEmployeeData,
-  LeaveManageHRData,
   EmployeeSalaryData,
   EstimatesData,
   ExpensesData,
+  HolidaysData,
+  LeaveManageEmployeeData,
+  LeaveManageHRData,
+  MainAttendanceData,
   PaymentsData,
 } from './hrmanagement';
 
@@ -59,94 +60,53 @@ import {
 import { NotesData } from './notes';
 
 // Social Media
-import { FriendsData, EventData } from './socialMedia';
+import { EventData, FriendsData } from './socialMedia';
 
 // Invoice
 import { InvoiceList } from './invoice';
 
 // Users
-import { UserListViewData, GridViewData } from './users';
+import { GridViewData, UserListViewData } from './users';
 
 // table
 import { basic, reactTableData } from './table';
 
 // pricing
-import { pricingData, cardData } from './pages';
+import { cardData, pricingData } from './pages';
 
 export {
-  ProductsStatisticsData,
-  ProductOrdersData,
-  widgetsData,
-  widgetsData2,
-  EmailPerformanceData,
-
-  // HR Dashborad
-  EmployeePerformanceData,
-  RecentPayrollData,
-  UpcomingInterviewData,
-  UpcomingScheduledData,
-
-  // Social Media Dashborad
-  activeFriendsData,
-  storyData,
-  MessageData,
-  PopularEventsData,
-  UpcomingBirthdayData,
-
+  AttendanceData,
+  // Calendar
+  CalenderCategories, ChatUser,
   // Chat
   ContactList,
-  RecentChats,
-  RecentFind,
-  Documents,
-  ChatUser,
-
-  // Email
-  MailList,
-
-  // Calendar
-  CalenderCategories,
-  Events,
-
+  // HR Management
+  DepartmentsListData, Documents, EmailPerformanceData, EmployeeListData,
+  // HR Dashborad
+  EmployeePerformanceData, EmployeeSalaryData,
+  EstimatesData, EventData, Events, ExpensesData,
+  // Social Media
+  FriendsData, GridViewData, HolidaysData,
+  // Invoice
+  InvoiceList, LeaveManageEmployeeData,
+  LeaveManageHRData,
   // Ecommerce
   ListViewData,
-  OrderListData,
-  SellersData,
-  ProductGridViewData,
-  ShoppingCartData,
-  ProductReviewsData,
-
-  // HR Management
-  DepartmentsListData,
-  EmployeeListData,
-  HolidaysData,
-  AttendanceData,
-  MainAttendanceData,
-  LeaveManageEmployeeData,
-  LeaveManageHRData,
-  EmployeeSalaryData,
-  EstimatesData,
-  ExpensesData,
-  PaymentsData,
-
+  // Email
+  MailList, MainAttendanceData, MessageData,
   // Notes
-  NotesData,
-
-  // Social Media
-  FriendsData,
-  EventData,
-
-  // Invoice
-  InvoiceList,
-
+  NotesData, OrderListData, PaymentsData, PopularEventsData, ProductGridViewData, ProductOrdersData, ProductReviewsData, ProductsStatisticsData,
+  PurchaseRequestData, RecentChats,
+  RecentFind, RecentPayrollData, SellersData, ShoppingCartData, UpcomingBirthdayData, UpcomingInterviewData,
+  UpcomingScheduledData,
   // Users
   UserListViewData,
-  GridViewData,
-
+  // Social Media Dashborad
+  activeFriendsData,
   // table
-  basic,
-  reactTableData,
-
+  basic, cardData,
   // pricing
-  pricingData,
-  cardData,
+  pricingData, reactTableData, storyData, widgetsData,
+  widgetsData2
 };
+

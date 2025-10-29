@@ -19,6 +19,7 @@ import userProfile from 'assets/images/users/user-profile.png';
 
 //import components
 import { Dropdown } from 'Common/Components/Dropdown';
+import ExchangeRate from 'Common/ExchangeRate';
 import LanguageDropdown from 'Common/LanguageDropdown';
 import LightDark from 'Common/LightDark';
 import NotificationDropdown from 'Common/NotificationDropdown';
@@ -187,7 +188,8 @@ const Header = ({ handleToggleDrawer, handleDrawer }: any) => {
                 <Search className="inline-block size-4 absolute left-2.5 top-2.5 text-topbar-item fill-slate-100 group-data-[topbar=dark]:fill-topbar-item-bg-hover-dark group-data-[topbar=dark]:text-topbar-item-dark group-data-[topbar=brand]:fill-topbar-item-bg-hover-brand group-data-[topbar=brand]:text-topbar-item-brand group-data-[topbar=dark]:dark:text-zink-200 group-data-[topbar=dark]:dark:fill-zink-600" />
               </div> */}
 
-              <div className="flex gap-3 ms-auto">
+              <div className="flex gap-2 ms-auto">
+                <ExchangeRate />
                 {/* LanguageDropdown */}
                 <LanguageDropdown />
 
