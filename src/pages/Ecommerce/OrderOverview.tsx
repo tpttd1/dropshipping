@@ -12,9 +12,12 @@ import productImg08 from 'assets/images/product/img-08.png';
 
 // icons
 import { CircleDollarSign, CreditCard, Download, Truck } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 const OrderOverview = () => {
+  
+      const { t } = useTranslation();
   return (
     <React.Fragment>
       <BreadCrumb title="Order Overview" pageTitle="Ecommerce" />
@@ -152,7 +155,7 @@ const OrderOverview = () => {
           <div className="card">
             <div className="card-body">
               <div className="flex items-center gap-3 mb-4">
-                <h6 className="text-15 grow">Order Summary</h6>
+                <h6 className="text-15 grow">{t("Order Summary")}</h6>
                 <Link to="#!" className="text-red-500 underline shrink-0">
                   Cancelled Order
                 </Link>

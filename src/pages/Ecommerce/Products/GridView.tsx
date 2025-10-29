@@ -28,6 +28,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createSelector } from 'reselect';
 
+import { useTranslation } from 'react-i18next';
 import { ToastContainer } from 'react-toastify';
 import {
   deleteProductGrid as onDeleteProductGrid,
@@ -36,6 +37,7 @@ import {
 
 const GridView = () => {
   const dispatch = useDispatch<any>();
+  const { t } = useTranslation();
 
   const selectDataList = createSelector(
     (state: any) => state.Ecommerce,
@@ -736,7 +738,7 @@ const GridView = () => {
               to="#!"
               className="px-2.5 py-0.5 text-sm font-medium rounded border bg-transparent border-transparent text-slate-500 transition hover:bg-slate-200 dark:bg-zink-800 dark:hover:bg-zink-600 dark:text-zink-200"
             >
-              All Clear
+              {t("All Clear")}
             </Link>
           </div>
 
