@@ -15,16 +15,15 @@ import {
   ShoppingCart,
   Star,
   Trash2,
-  X
+  X,
 } from 'lucide-react';
 
 import { Dropdown } from 'Common/Components/Dropdown';
 import DeleteModal from 'Common/DeleteModal';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // react-redux
-import { useDispatch, useSelector } from 'react-redux';
-import { createSelector } from 'reselect';
+import { useDispatch } from 'react-redux';
 
 import { useTranslation } from 'react-i18next';
 import { ToastContainer } from 'react-toastify';
@@ -32,19 +31,24 @@ import {
   deleteProductGrid as onDeleteProductGrid,
   getProductGrid as onGetProductGrid,
 } from 'slices/thunk';
-
+// import detail from '../data/detail.json';
+import list from '../data/list.json';
 const GridView = () => {
   const dispatch = useDispatch<any>();
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const selectDataList = createSelector(
-    (state: any) => state.Ecommerce,
-    (state) => ({
-      dataList: state.productGrid,
-    })
-  );
+  // console.log(list.upstream);
+  // console.log(detail);
 
-  const { dataList } = useSelector(selectDataList);
+  // const selectDataList = createSelector(
+  //   (state: any) => state.Ecommerce,
+  //   (state) => ({
+  //     dataList: state.productGrid,
+  //   })
+  // );
+
+  // const { dataList } = useSelector(selectDataList);
 
   const [data, setData] = useState<any>([]);
   const [eventData, setEventData] = useState<any>();
@@ -55,12 +59,17 @@ const GridView = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    setData(dataList);
-  }, [dataList]);
+    setData(list.upstream);
+  }, []);
 
   // Delete Modal
   const [deleteModal, setDeleteModal] = useState<boolean>(false);
   const deleteToggle = () => setDeleteModal(!deleteModal);
+
+  // Delete Data
+  const handleDetail = (id: string) => {
+    navigate(`/apps-product/${id}`);
+  };
 
   // Delete Data
   const onClickDelete = (cell: any) => {
@@ -735,20 +744,21 @@ const GridView = () => {
               to="#!"
               className="px-2.5 py-0.5 text-sm font-medium rounded border bg-transparent border-transparent text-slate-500 transition hover:bg-slate-200 dark:bg-zink-800 dark:hover:bg-zink-600 dark:text-zink-200"
             >
-              {t("All Clear")}
+              {t('All Clear')}
             </Link>
           </div>
 
           <div
-            className={`grid grid-cols-2 mt-5 md:grid-cols-3 xl:grid-cols-4 group gap-x-5`}
+            className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-5 mt-5 group`}
             id="cardGridView"
           >
             {(data || []).map((item: any, key: number) => (
               <div
-                className="card md:group-[.gridView]:flex relative"
+                className="card md:group-[.gridView]:flex relative cursor-pointer"
                 key={key}
+                onClick={() => handleDetail(item.providerProductId)}
               >
-                <div className="relative group-[.gridView]:static p-8 group-[.gridView]:p-5">
+                <div className="relative group-[.gridView]:static mb-1">
                   <Link
                     to="#!"
                     className={`absolute group/item toggle-button top-6 ltr:right-6 rtl:left-6 ${item.isFav && 'active'}`}
@@ -758,21 +768,22 @@ const GridView = () => {
                   </Link>
                   <div className="group-[.gridView]:p-3 group-[.gridView]:bg-slate-100 dark:group-[.gridView]:bg-zink-600 group-[.gridView]:inline-block rounded-md">
                     <img
-                      src={item.img}
+                      src={item.imageUrls[0]}
                       alt=""
-                      className="group-[.gridView]:h-16"
+                      loading="lazy"
+                      className="group-[.gridView]:h-16 rounded-md"
                     />
                   </div>
                 </div>
-                <div className="card-body !pt-0 md:group-[.gridView]:flex group-[.gridView]:!p-5 group-[.gridView]:gap-3 group-[.gridView]:grow">
+                <div className="card-body !p-4 !pt-0 !pb-2 md:group-[.gridView]:flex group-[.gridView]:!p-4 group-[.gridView]:gap-3 group-[.gridView]:grow">
                   <div className="group-[.gridView]:grow">
-                    <h6 className="mb-1 truncate transition-all duration-200 ease-linear text-15 hover:text-custom-500">
+                    <h6 className="mb-1 text-15 transition-all duration-200 ease-linear hover:text-custom-500 line-clamp-2">
                       <Link to="/apps-ecommerce-product-overview">
-                        {item.productName}
+                        {item.titleEn}
                       </Link>
                     </h6>
 
-                    <div className="flex items-center text-slate-500 dark:text-zink-200">
+                    {/* <div className="flex items-center text-slate-500 dark:text-zink-200">
                       <div className="mr-1 text-yellow-500 shrink-0 text-15">
                         <i className="ri-star-fill"></i>
                         <i className="ri-star-fill"></i>
@@ -781,16 +792,16 @@ const GridView = () => {
                         <i className="ri-star-half-line"></i>
                       </div>
                       ({item.ratingNumber})
-                    </div>
-                    <h5 className="mt-4 text-16">
-                      {item.price}{' '}
+                    </div> */}
+                    <h5 className="mt-0 text-16 text-orange-400">
+                      ¥{item.price}{' '}
                       <small className="font-normal line-through text-slate-500 dark:text-zink-200">
-                        {item.delPrice}
+                        ¥{item.price}
                       </small>
                     </h5>
                   </div>
 
-                  <div className="flex items-center gap-2 mt-4 group-[.gridView]:mt-0 group-[.gridView]:self-end">
+                  <div className="flex hidden items-center gap-2 mt-4 group-[.gridView]:mt-0 group-[.gridView]:self-end">
                     <button
                       type="button"
                       className="w-full bg-white border-dashed text-slate-500 btn border-slate-500 hover:text-slate-500 hover:bg-slate-50 hover:border-slate-600 focus:text-slate-600 focus:bg-slate-50 focus:border-slate-600 active:text-slate-600 active:bg-slate-50 active:border-slate-600 dark:bg-zink-700 dark:text-zink-200 dark:border-zink-400 dark:ring-zink-400/20 dark:hover:bg-zink-600 dark:hover:text-zink-100 dark:focus:bg-zink-600 dark:focus:text-zink-100 dark:active:bg-zink-600 dark:active:text-zink-100"

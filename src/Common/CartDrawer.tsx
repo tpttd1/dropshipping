@@ -6,6 +6,7 @@ import Drawer from './Components/Drawer';
 import image1 from 'assets/images/product/img-01.png';
 import image3 from 'assets/images/product/img-03.png';
 import image9 from 'assets/images/product/img-09.png';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 interface AddToCard {
@@ -49,6 +50,7 @@ const addToCard: AddToCard[] = [
 ];
 
 const CartDrawer = ({ show, handleDrawer }: any) => {
+  const { t } = useTranslation();
   const [cart, setCart] = React.useState<AddToCard[]>(addToCard);
 
   const [charge, setCharge] = React.useState<any>(0);
@@ -118,7 +120,7 @@ const CartDrawer = ({ show, handleDrawer }: any) => {
         <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-zink-500">
           <div className="grow">
             <h5 className="mb-0 text-16">
-              Shopping Cart{' '}
+              {t('Shopping Cart')}{' '}
               <span className="inline-flex items-center justify-center size-5 ml-1 text-[11px] font-medium border rounded-full text-white bg-custom-500 border-custom-500">
                 3
               </span>

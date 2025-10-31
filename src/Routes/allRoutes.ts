@@ -119,6 +119,7 @@ const authProtectedRoutes: Array<RouteObject> = [
 
   // Ecommerce
   { path: '/apps-product', component: GridView },
+  { path: '/apps-product/:id', component: Overview },
   { path: '/apps-ecommerce-product-overview', component: Overview },
   { path: '/apps-ecommerce-product-create', component: AddNew },
   { path: '/apps-shopping-cart', component: ShoppingCart },
@@ -235,3 +236,4 @@ const publicRoutes = [
 ];
 
 export { authProtectedRoutes, publicRoutes };
+

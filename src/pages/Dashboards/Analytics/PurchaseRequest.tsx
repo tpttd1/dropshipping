@@ -21,7 +21,7 @@ const PurchaseRequest = () => {
 
   const handleDetail = (_id: string) => {
     //
-  }
+  };
 
   const columns = useMemo(
     () => [
@@ -43,9 +43,7 @@ const PurchaseRequest = () => {
         enableColumnFilter: false,
         enableSorting: true,
         cell: (cell: any) => (
-          <span>
-            {cell.row.original.price.toLocaleString()}
-          </span>
+          <span>{cell.row.original.price.toLocaleString()} ¥</span>
         ),
       },
       {
@@ -54,9 +52,7 @@ const PurchaseRequest = () => {
         enableColumnFilter: false,
         enableSorting: true,
         cell: (cell: any) => (
-          <span>
-            {cell.row.original.depositAmount.toLocaleString()}
-          </span>
+          <span>{cell.row.original.depositAmount.toLocaleString()} ¥</span>
         ),
       },
       {
@@ -65,9 +61,7 @@ const PurchaseRequest = () => {
         enableColumnFilter: false,
         enableSorting: true,
         cell: (cell: any) => (
-          <span>
-            {cell.row.original.depositedAmount.toLocaleString()}
-          </span>
+          <span>{cell.row.original.depositedAmount.toLocaleString()} ¥</span>
         ),
       },
 
@@ -76,7 +70,7 @@ const PurchaseRequest = () => {
         accessorKey: 'status',
         enableColumnFilter: false,
         enableSorting: true,
-        cell: (cell: any) => getStatus(cell.row.original.status)
+        cell: (cell: any) => getStatus(cell.row.original.status),
       },
       {
         header: 'Thao tác',
@@ -84,14 +78,15 @@ const PurchaseRequest = () => {
         enableColumnFilter: false,
         enableSorting: true,
         cell: (cell: any) => (
-        <Link
-          to="#!"
-          className="text-blue-400 transition-all duration-300 ease-linear hover:text-blue-500"
-          onClick={() => handleDetail(cell.row.original.id)}
-        >
-          <Info className="inline-block size-4 mr-1 align-middle" />{' '}
-          <span className="align-middle">{t("View Detail")}</span>
-        </Link>)
+          <Link
+            to="#!"
+            className="text-blue-400 transition-all duration-300 ease-linear hover:text-blue-500"
+            onClick={() => handleDetail(cell.row.original.id)}
+          >
+            <Info className="inline-block size-4 mr-1 align-middle" />{' '}
+            <span className="align-middle">{t('View Detail')}</span>
+          </Link>
+        ),
       },
     ],
     []
@@ -103,7 +98,7 @@ const PurchaseRequest = () => {
         <div className="card-body">
           <div className="grid items-center grid-cols-1 gap-3 mb-5 xl:grid-cols-12">
             <div className="xl:col-span-3">
-              <h6 className="text-15">{t("Purchase Request")}</h6>
+              <h6 className="text-15">{t('Purchase Request')}</h6>
             </div>
             <div className="xl:col-span-3 xl:col-start-10">
               <div className="flex gap-3">

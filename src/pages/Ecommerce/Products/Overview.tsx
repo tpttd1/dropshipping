@@ -4,13 +4,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Flatpickr from 'react-flatpickr';
 
 // Image
-import overview01 from 'assets/images/product/overview-01.png';
-import overview02 from 'assets/images/product/overview-02.png';
 
-import productImg01 from 'assets/images/product/img-01.png';
-import productImg09 from 'assets/images/product/img-09.png';
-import productImg12 from 'assets/images/product/img-12.png';
-import productImg13 from 'assets/images/product/img-13.png';
 import userDummy from 'assets/images/users/user-dummy-img.jpg';
 
 // Icon
@@ -34,7 +28,7 @@ import {
   Trash2,
   Truck,
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -43,6 +37,8 @@ import { createSelector } from 'reselect';
 // Formik
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import detail from '../data/detail.json';
+import list from '../data/list.json';
 
 import {
   addReview as onAddReview,
@@ -52,6 +48,12 @@ import {
 } from 'slices/thunk';
 
 const Overview = () => {
+  const { id } = useParams();
+
+  console.log(id);
+  console.log(detail);
+  console.log(list.upstream);
+
   const dispatch = useDispatch<any>();
 
   const selectDataList = createSelector(
@@ -247,22 +249,22 @@ const Overview = () => {
               <div className="card-body">
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-12">
                   <div className="rounded-md md:col-span-8 md:row-span-2 bg-slate-100 dark:bg-zink-600">
-                    <img src={overview01} alt="" />
+                    <img src={detail.imageUrls[0]} alt="" loading='lazy' />
                   </div>
                   <div className="rounded-md md:col-span-4 bg-slate-100 dark:bg-zink-600">
-                    <img src={overview02} alt="" />
+                    <img src={detail.imageUrls[1]} alt="" loading='lazy' />
                   </div>
                   <div className="p-4 rounded-md md:col-span-4 bg-slate-100 dark:bg-zink-600">
-                    <img src={productImg01} alt="" />
+                    <img src={detail.imageUrls[2]} alt="" loading='lazy' />
                   </div>
                   <div className="p-4 rounded-md md:col-span-4 bg-slate-100 dark:bg-zink-600">
-                    <img src={productImg09} alt="" />
+                    <img src={detail.imageUrls[3]} alt="" loading='lazy' />
                   </div>
                   <div className="p-4 rounded-md md:col-span-4 bg-slate-100 dark:bg-zink-600">
-                    <img src={productImg12} alt="" />
+                    <img src={detail.imageUrls[4]} alt="" loading='lazy' />
                   </div>
                   <div className="p-4 rounded-md md:col-span-4 bg-slate-100 dark:bg-zink-600">
-                    <img src={productImg13} alt="" />
+                    <img src={detail.imageUrls[0]} alt="" loading='lazy' />
                   </div>
                 </div>
 
@@ -379,29 +381,16 @@ const Overview = () => {
                 </Dropdown.Content>
               </Dropdown>
               <span className="px-2.5 py-0.5 text-xs inline-block font-medium rounded border bg-sky-100 border-sky-100 text-sky-500 dark:bg-sky-400/20 dark:border-transparent">
-                {' '}
                 New Arrivals
               </span>
-              <h5 className="mt-3 mb-1">
-                Smartees Printed Men Round Neck Pink
-              </h5>
+              <h5 className="mt-3 mb-1">{detail.titleEn}</h5>
               <ul className="flex flex-wrap items-center gap-4 mb-5 text-slate-500 dark:text-zink-200">
+                <li>Seller: {detail.seller.shopName}</li>
                 <li>
-                  <Link
-                    to="#!"
-                    className="font-medium underline text-custom-500"
-                  >
-                    Rossie Fadel
-                  </Link>
-                </li>
-                <li>
-                  Seller:{' '}
-                  <Link to="#!" className="font-medium">
-                    Themesdesign
-                  </Link>
-                </li>
-                <li>
-                  Published: <span className="font-medium">20 Oct, 2023</span>
+                  Location:{' '}
+                  <span className="font-medium">
+                    {detail.attributes.location}
+                  </span>
                 </li>
               </ul>
 
@@ -421,16 +410,18 @@ const Overview = () => {
                   <h6>973 Reviews</h6>
                 </div>
                 <div className="shrink-0">
-                  <h6>1,231 Sold</h6>
+                  <h6>
+                    {Number(detail.attributes.totalSold).toLocaleString()} Sold
+                  </h6>
                 </div>
               </div>
 
               <div className="mb-4">
                 <p className="mb-1 text-green-500">Special Price</p>
                 <h4>
-                  $487.32{' '}
+                  ¥{detail.price.toLocaleString()}{' '}
                   <small className="font-normal line-through align-middle text-slate-500 dark:text-zink-200">
-                    $599.99
+                    ¥{detail.price.toLocaleString()}
                   </small>{' '}
                   <small className="text-green-500 align-middle">20% Off</small>
                 </h4>

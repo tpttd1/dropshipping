@@ -10,8 +10,8 @@ import { ShoppingCartData } from 'Common/data';
 import { useTranslation } from 'react-i18next';
 
 const ShoppingCart = () => {
-    const { t } = useTranslation();
-  
+  const { t } = useTranslation();
+
   // Delete Modal
   const [deleteModal, setDeleteModal] = useState<boolean>(false);
   const [deleteModalAll, setDeleteModalAll] = useState<boolean>(false);
@@ -107,7 +107,7 @@ const ShoppingCart = () => {
         <div className="xl:col-span-9 products-list">
           <div className="flex items-center gap-3 mb-5">
             <h5 className="underline text-16 grow">
-              Shopping Cart ({cart.length})
+              {t('Shopping Cart')} ({cart.length})
             </h5>
             <div>
               <Link
@@ -116,7 +116,7 @@ const ShoppingCart = () => {
                 onClick={() => setDeleteModalAll(!deleteModalAll)}
               >
                 <Trash2 className="inline-block size-4 mr-1 align-middle" />{' '}
-                <span className="align-middle">{t("Delete All")}</span>
+                <span className="align-middle">{t('Delete All')}</span>
               </Link>
             </div>
           </div>
@@ -229,7 +229,7 @@ const ShoppingCart = () => {
           <div className="sticky top-[calc(theme('spacing.header')_*_1.3)] mb-5">
             <div className="card ">
               <div className="card-body">
-                <h6 className="mb-4 text-15">{t("Order Summary")}</h6>
+                <h6 className="mb-4 text-15">{t('Order Summary')}</h6>
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <tbody className="table-total">

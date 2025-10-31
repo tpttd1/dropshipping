@@ -44,7 +44,7 @@ const OtherPurchaseRequest = () => {
         enableSorting: true,
         cell: (cell: any) => (
           <span>
-            {cell.row.original.price.toLocaleString()}
+            {cell.row.original.price.toLocaleString()} ¥
           </span>
         ),
       },
@@ -55,7 +55,7 @@ const OtherPurchaseRequest = () => {
         enableSorting: true,
         cell: (cell: any) => (
           <span>
-            {cell.row.original.depositAmount.toLocaleString()}
+            {cell.row.original.depositAmount.toLocaleString()} ¥
           </span>
         ),
       },
@@ -66,7 +66,7 @@ const OtherPurchaseRequest = () => {
         enableSorting: true,
         cell: (cell: any) => (
           <span>
-            {cell.row.original.depositedAmount.toLocaleString()}
+            {cell.row.original.depositedAmount.toLocaleString()} ¥
           </span>
         ),
       },

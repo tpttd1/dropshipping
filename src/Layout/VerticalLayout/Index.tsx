@@ -3,8 +3,8 @@ import React from 'react';
 import { Dropdown } from 'Common/Components/SideBarDropdown';
 import { Link } from 'react-router-dom';
 
-import { menuData } from '../LayoutMenuData';
 import withRouter from 'Common/withRouter';
+import { menuData } from '../LayoutMenuData';
 
 //i18n
 import { withTranslation } from 'react-i18next';
